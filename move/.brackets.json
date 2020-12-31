@@ -1,0 +1,13 @@
+{
+    "jscodehints.detectedExclusions": [
+        "D:/A/gymlaravel/gym/public/admin_assets/assets/demo/default/custom/components/base/blockui.js",
+        "D:/A/gymlaravel/gym/public/admin_assets/assets/demo/default/custom/components/base/dropdown.js",
+        "D:/A/gymlaravel/gym/public/admin_assets/assets/demo/default/custom/components/base/bootstrap-notify.js",
+        "D:/A/gymlaravel/gym/public/admin_assets/assets/demo/default/custom/components/base/toastr.js",
+        "D:/A/gymlaravel/gym/public/admin_assets/assets/demo/default/custom/components/base/scrollable.js",
+        "D:/A/gymlaravel/gym/public/admin_assets/assets/demo/default/custom/components/base/treeview.js",
+        "D:/A/gymlaravel/gym/public/admin_assets/assets/demo/default/custom/components/calendar/background-events.js",
+        "D:/A/gymlaravel/gym/vendor/filp/whoops/src/Whoops/Resources/js/whoops.base.js",
+        "D:/A/gymlaravel/gym/public/admin_assets/assets/demo/default/custom/components/portlets/draggable.js"
+    ]
+}

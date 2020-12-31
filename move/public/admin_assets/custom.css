@@ -1,0 +1,271 @@
+body * {
+    font-family: 'Cairo', sans-serif ;
+}
+.cairo{
+    font-family: 'Cairo', sans-serif ;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item > .m-menu__heading .m-menu__link-text, .m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item > .m-menu__link .m-menu__link-text {
+/*    color: #868aa8;*/
+    padding: 0 9px !important;
+}
+body.ar .m-widget24 .m-widget24__item .m-widget24__title{
+        margin-right: 1.8rem !important;
+        margin-left: 0px !important;
+}
+body.ar .m-widget24 .m-widget24__item .m-widget24__stats{
+        float: left !important;
+    margin-left: 1.8rem !important;
+    margin-right: 0px !important;
+}
+body.ar .m-widget24 .m-widget24__item .m-widget24__desc {
+    margin-right: 1.8rem !important;
+    margin-left: 0px !important;
+}
+body.ar .m-widget24 .m-widget24__item .m-widget24__change {
+    margin-right: 1.8rem !important;
+    margin-left: 0px !important;
+}
+body.ar .m-widget1 .m-widget1__item .m-widget1__number{
+    float: left !important;
+}
+body.ar .m-footer{
+        margin-left: 0px !important;
+        margin-right: 255px !important;
+}
+body.ar .mr-auto{
+    margin-left: auto !important;
+    margin-right: 0px !important;
+}
+body.ar .m--align-right{
+    text-align: left !important;
+}
+@media (min-width: 1200px){
+body.ar .row.m-row--col-separator-xl > div {
+    border-bottom: 0;
+    border-left: 1px solid #ebedf2 !important;
+    border-right: 0px !important;
+    }
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item .m-menu__submenu .m-menu__item > .m-menu__heading .m-menu__link-text, .m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item .m-menu__submenu .m-menu__item > .m-menu__link .m-menu__link-text{
+        padding: 0 10px !important;
+}
+body.ar .m-subheader .m-subheader__title.m-subheader__title--separator {
+    border-left: 0px !important;
+    border-right: 0px !important;
+    padding: 7px 0px 7px 25px !important;
+       
+}
+.m-subheader .m-subheader__title{
+    font-family: 'Cairo', sans-serif !important;
+}
+body.ar .m-datatable.m-datatable--default > .m-datatable__table > .m-datatable__head .m-datatable__row > .m-datatable__cell > span, .m-datatable.m-datatable--default > .m-datatable__table > .m-datatable__foot .m-datatable__row > .m-datatable__cell > span{
+    text-align: right;
+}
+.m-form__actions * {
+    font-family: 'Cairo', sans-serif !important;
+}
+body.ar .m-table.m-table--head-bg-brand thead th , body.ar .table th, .table td{
+text-align: right;
+}
+.bootstrap-timepicker-widget{
+    direction: ltr !important;
+}
+.danger-errors p{
+        margin-bottom: 0;
+    color: white;
+    font-size: 17px;
+}
+body.ar .danger-errors p{
+    text-align: right;
+}
+body.ar .m-brand .m-brand__tools .m-brand__icon{
+    float: left;
+}
+body.ar .m-brand__icon.m-brand__toggler--active{
+    float: none !important;
+}
+body.ar .m-datatable.m-datatable--default > .m-datatable__table > .m-datatable__head .m-datatable__row > .m-datatable__cell > span > i{
+    right: 0px !important;
+}
+body.ar .bootstrap-select.btn-group > .dropdown-toggle:after{
+    right: 1rem !important;
+}
+body.ar .m-datatable.m-datatable--default > .m-datatable__pager > .m-datatable__pager-info .m-datatable__pager-size{
+    margin-left: 10px !important;
+    margin-right: 0px !important;
+}
+body.ar #m_header_topbar{
+    float: left !important;
+}
+body.ar .m-dropdown.m-dropdown--align-right .m-dropdown__wrapper{
+    left: 0px !important;
+    right: auto!important;
+}
+body.ar .m-topbar .m-topbar__nav.m-nav > .m-nav__item.m-topbar__user-profile.m-topbar__user-profile--img.m-dropdown--arrow .m-dropdown__arrow{
+    right: auto !important;
+    left: 12.5px !important;
+}
+.m-card-user.m-card-user--skin-dark .m-card-user__details .m-card-user__name {
+    color: #fdfdff !important;
+}
+.m-card-user.m-card-user--skin-dark .m-card-user__details .m-card-user__email {
+    color: #e2e2e2 !important;
+}
+.form-control{
+    line-height: 20px !important;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item > .m-menu__heading .m-menu__link-text, .m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item > .m-menu__link .m-menu__link-text{
+    color: white !important;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item > .m-menu__heading .m-menu__link-icon, .m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item > .m-menu__link .m-menu__link-icon{
+    color: white !important;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item > .m-menu__heading .m-menu__ver-arrow, .m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item > .m-menu__link .m-menu__ver-arrow{
+     color: white !important;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__section .m-menu__section-text{
+       color: white !important;
+}
+.image_upload_aree_slider{
+    width: 100%;
+    height: 450px;
+    border:1px solid #ebedf2;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.addimagebutton i{
+    font-size: 25px;
+    text-align: center;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+}
+.addimagebutton p{
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.addimagebutton_on_gallery{
+     text-align: center;
+    font-size: 16px;
+    cursor: pointer !important;
+}
+
+
+.dropzone_gallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+     border: 2px dashed #ebedf2;
+    min-height: 150px;
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+    background: white;
+    padding: 20px 20px;
+        -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.gallery{
+    cursor: pointer;
+     border: 2px dashed #ebedf2;
+    min-height: 150px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: white;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.upload_overlay{
+        width: 100%;
+    height: 146px;
+    background: #ffffffb8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #424569;
+    font-weight: bold;
+}
+.remove_overlay{
+          width: 100%;
+    height: 146px;
+    background: #ffffffb8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #424569;
+    font-weight: bold;
+    display: none;
+    opacity: 0;
+    transition: 1s opacity;
+}
+.gallery:hover .remove_overlay{
+    display: flex;
+    opacity: 1;
+}
+.removeBtn_box{
+     text-align: center;
+    font-size: 16px;
+    cursor: pointer !important;
+}
+body.ar .permissions_box .m-checkbox{
+        padding-right: 30px;
+        padding-left: 0px;
+}
+body.ar .permissions_box .m-checkbox > span{
+    right: 0;
+    left: none;
+}
+.permissions_box .m-checkbox{
+    margin: 25px;
+}
+.planRows > .row{
+    margin-top: 20px;
+    margin-bottom:2 0px;
+}
+.imageUploadsecond{
+    width: 250px;
+    height: 140px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center top;
+}
+.addimagebtn{
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer !important;
+    
+}
+.colorWhite{
+    color: white;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item .m-menu__submenu .m-menu__item > .m-menu__heading .m-menu__link-text, .m-aside-menu.m-aside-menu--skin-dark .m-menu__nav > .m-menu__item .m-menu__submenu .m-menu__item > .m-menu__link .m-menu__link-text{
+    color: white;
+}
+.removeUser{
+    cursor: pointer;
+    color: #5867dd !important;
+}
+.printPayment{
+    cursor: pointer;
+     color: #5867dd !important;
+}

@@ -1,0 +1,881 @@
+.rtl {
+    direction: rtl !important;
+}
+.ltr {
+    direction: ltr !important;
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+.justify-content-center {
+    justify-content: center!important;
+}
+.d-flex {
+    display: flex!important;
+}
+#loginModal .tab-content > .tab-pane.active, #secondaryLoginModal .tab-content > .tab-pane.active {
+    display: flex !important;
+}
+#loginModal *{
+      font-family: 'Cairo', sans-serif;
+}
+.nav-link.tab:hover {
+    border: 1px solid #FED134;
+}
+
+.ltr .right-tab, .rtl .left-tab {
+    border-top-right-radius: .25rem !important;
+    border-bottom-right-radius: .25rem !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.nav-link.tab {
+    border: 1px solid #FED134;
+    color: #FED134;
+    vertical-align: text-top;
+}
+.nav-link.tab.active {
+    border: 1px solid #FED134;
+    background-color: #FED134;
+    color: #fff;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #FED134;
+    border-color: #FED134;
+}
+.ltr .left-tab, .rtl .right-tab {
+    border-top-right-radius: .0 !important;
+    border-bottom-right-radius: .0 !important;
+    border-top-left-radius: .25rem !important;
+    border-bottom-left-radius: .25rem !important;
+}
+.nav-link.tab {
+    border: 1px solid #FED134;
+    color: #FED134;
+    vertical-align: text-top;
+}
+.pl-0, .px-0 {
+    padding-left: 0!important;
+}
+.pr-0, .px-0 {
+    padding-right: 0!important;
+}
+#loginModal .nav-link{
+    margin: 0px !important;
+}
+#loginModal label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 15px;
+}
+#loginModal .form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .375rem .75rem;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 5px !important;
+}
+.inner-addon:not(.active) {
+    fill: #ddd;
+}
+.inner-addon.pass-addon {
+    cursor: pointer;
+}
+.inner-addon {
+    right: unset !important;
+    left: 0;
+}
+.inner-addon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    padding: 7px 0;
+}
+.left-addon{
+    left: 7px;
+}
+.glyphicon{
+    font-size: 18px;
+}
+.forgettext{
+     font-size: 16px;
+}
+.rtl .custom-check label {
+    margin-right: 24px;
+    font-size: 15px !important;
+}
+.ltr .custom-check label {
+    margin-left: 24px;
+    font-size: 15px !important;
+    cursor: pointer;
+}
+.form-check-label{
+     cursor: pointer;
+}
+#loginModal .form-check-input{
+    margin-top: 14px;
+    cursor: pointer;
+}
+#loginModal .modal-header{
+    padding: .5rem !important;
+}
+#loginModal button.close{
+    outline: none;
+}
+#loginModal .form-control[type=submit]{
+    color: black !important;
+}
+#loginModal .form-control[type=submit]:hover{
+    background: #FED134 !important; 
+    color: white !important;
+    cursor: pointer;
+    border: #FED134 !important;
+}
+#loginModal .modal-body{
+    padding: 10px !important;
+}
+#loginModal .tabsNavs{
+    margin-bottom: 10px !important;
+}
+.responsive-calendar *{
+      font-family: 'Cairo', sans-serif;
+}
+.responsive-calendar .controls {
+  text-align: center;
+}
+.responsive-calendar .controls a {
+  cursor: pointer;
+}
+.responsive-calendar .controls h4 {
+  display: inline;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+}
+
+.responsive-calendar .day-headers {
+  font-size: 0;
+  background-color: #1099e9;
+  height: 35px;
+}
+.responsive-calendar .day.header {
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 35px;
+  font-size: 14px;
+}
+.responsive-calendar .days {
+  font-size: 0;
+}
+.responsive-calendar.rtl .day{
+    float: left;
+}
+.responsive-calendar.ltr .day{
+    float: right;
+}
+.responsive-calendar .day {
+  font-size: 18px;
+  width: 14.285714285714286%;
+  text-align: center;
+  font-weight: 500;
+  line-height: 2;
+}
+.responsive-calendar .day a {
+  color: #333;
+  display: block;
+  cursor: pointer;
+  padding: 25% 0 25% 0;
+}
+.responsive-calendar .day.active{
+    background: #16a9ff;
+}
+.responsive-calendar .day.active div{
+    color: white;
+}
+.responsive-calendar .day a:hover {
+  background-color: #f8f8f8;
+  text-decoration: none;
+}
+.responsive-calendar .today a div{
+  color: #16a9ff;
+}
+.responsive-calendar .day-blocks{}
+
+.responsive-calendar .day.active a:hover {
+     background-color: #8fcaef !important;
+}
+.responsive-calendar .day.show-day-slots a div{
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    -webkit-transition-duration: .3s; /* Safari */
+    transition-duration: .3s;
+}
+.responsive-calendar .day.active .not-current {
+  background-color: #8fcaef;
+  color: #ffffff;
+}
+.responsive-calendar .day.active .not-current:hover {
+  background-color: #bcdff5;
+}
+.responsive-calendar .day.not-current a {
+  color: #cccccc;
+  background-color: #f1f1f1;
+  clear: both;
+}
+ .badge {
+  font-size: 10px!important;
+  height: 18px;
+  color: #fff;
+  padding: 4px 5px;
+  background-color: #2ecc71;
+  margin: 0 5px;
+}
+
+
+.responsive-calendar {
+  border: 1px solid #eee;
+}
+
+.responsive-calendar .controls {
+  background-color: #16a9ff;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 20px;
+}
+
+#suggestTimeslot .responsive-calendar .controls {
+  padding: 10px 20px;
+}
+
+.responsive-calendar .No_Slots {
+  padding: 50px;
+}
+
+.responsive-calendar .arrow-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+.calendar-admin h3 {
+  margin-top: 0;
+}
+
+.times-booking {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.times-booking.not-av {
+  background-color: rgba(231, 76, 60, 0.08);
+  cursor: not-allowed;
+}
+
+.times-booking:hover {
+  background: #f8f8f8;
+}
+
+.times-booking label {
+  line-height: 2;
+  font-size: 16px;
+}
+
+.times-booking label i {
+  padding: 5px;
+}
+
+.duration-title {
+  font-size: 16px;
+  color: #333;
+}
+
+.list-reserve-block {
+  padding: 10px;
+  border-top: 3px solid #2ecc71;
+}
+
+.list-reserve-block li {
+  border: 1px solid #eee;
+  margin: 10px 0;
+}
+
+.list-reserve-block .close {
+  width: 11px;
+  height: 11px;
+  background-size: 11px;
+  opacity: .7;
+}
+
+.list-reserve-block a.primary-btn {
+  margin: 0px 10px 15px 0px;
+  float: right;
+  clear: both;
+  color: #fff;
+    cursor: pointer;
+}
+
+.list-reserve-block a.primary-btn:hover {
+  background-color: #2ecc71;
+    color: white;
+    
+}
+
+.arabic .list-reserve-block a.primary-btn {
+  margin: 0 0 15px 10px;
+  float: left;
+}
+
+.list-reserve-block a.orange-btn {
+  margin: 0px 10px 15px 0px;
+  float: left;
+  padding: 6px 12px;
+}
+
+.arabic .list-reserve-block a.orange-btn {
+  margin: 0 0 15px 10px;
+  float: right;
+  padding: 6px 12px;
+}
+
+.list-reserve-block a.red-btn {
+  margin: 0px 10px 15px 0px;
+  float: left;
+  padding: 6px 12px;
+}
+
+.list-reserve-title h5 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.list-reserve-title .today {
+  color: #1F90CF;
+}
+
+.list-reserve {
+  border-radius: 2px;
+  margin: 4px 4px;
+  position: relative;
+}
+
+.list-reserve .list-reserve-content {
+  margin: 5px;
+}
+
+.list-reserve .list-reserve-info {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.list-reserve .list-reserve-action a {
+  display: inline-block;
+  padding: 7px 15px;
+  box-shadow: none;
+
+}
+
+.list-reserve .list-reserve-action a:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+a.not-av {
+  opacity: .5;
+  pointer-events: none;
+}
+
+a.not-av:after {
+  font-family: "Ionicons";
+  content: '\f207';
+  display: inline-block;
+  padding: 0 5px;
+  ;
+}
+
+div.not-av a {
+  font-size: small;
+  opacity: .9;
+  pointer-events: none;
+}
+
+div.not-av:after {
+  content: 'Booked';
+}
+
+.arabic div.not-av:after {
+  content: 'Ù…Ø­Ø¬ÙˆØ²';
+  float: left;
+  margin: 0px 10px 10px 10px;
+}
+
+div.not-av:after {
+  background-color: #e74c3c;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin: 0px 10px 15px 0px;
+  float: right;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 3px 5px 16.2px 1.8px rgba(0, 0, 0, 0.11);
+  display: inline-block;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.therapist-container .checkboxLayer {
+  min-width: 0px !important;
+  max-width: 180px !important;
+}
+
+.therapist-container .loader {
+  /* margin: 5% 11%;*/
+}
+.btn-primary,
+.btn-primary-theme {
+  color: white;
+  border-color: #1F90CF !important;
+  background-color: #1F90CF !important;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 3px 5px 16.2px 1.8px rgba(0, 0, 0, 0.11) !important;
+}
+
+.primary-btn {
+  color: white;
+  border: none;
+  background-color: #16a9ff;
+  border-radius: 4px;
+  padding: 8px 25px;
+  box-shadow: 3px 5px 16.2px 1.8px rgba(0, 0, 0, 0.11);
+  display: inline-block;
+}
+.list-reserve-block{
+     font-family: 'Cairo', sans-serif;
+}
+.hideloader{
+    display: none;
+}
+@keyframes ldio-lm074eabdy {
+  0% { transform: translate(-50%,-50%) rotate(0deg); }
+  100% { transform: translate(-50%,-50%) rotate(360deg); }
+}
+.ldio-lm074eabdy div {
+ width: 50px;
+    height: 50px;
+    border: 8px solid #0088cc;
+  border-top-color: transparent;
+  border-radius: 50%;
+}
+.ldio-lm074eabdy div {
+  animation: ldio-lm074eabdy 1s linear infinite;
+}
+.loadingio-spinner-rolling-bhl56zqj4fa {
+ background: #eae8e8ab;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000000000 !important;
+}
+.ldio-lm074eabdy {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ldio-lm074eabdy div { box-sizing: content-box; }
+.errormessagestyle{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+}
+#login_errors div , #signup_form_errors div , #signup_form_success div ,#login_success div{
+    font-size: 14px;
+}
+#login_errors , #signup_form_errors , #signup_form_success , #login_success{
+    margin-top: 20px;
+}
+.No_Slots {
+    padding: 50px;
+}
+/*payement success*/
+#paymentSuccess .modal-confirm {		
+	color: #636363;
+	width: 325px;
+	font-size: 14px;
+}
+#paymentSuccess .modal-confirm .modal-content {
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+}
+#paymentSuccess .modal-confirm .modal-header {
+	border-bottom: none;   
+	position: relative;
+}
+#paymentSuccess .modal-confirm h4 {
+	text-align: center;
+	font-size: 26px;
+	margin: 30px 0 -15px;
+}
+#paymentSuccess .modal-confirm .form-control, .modal-confirm .btn {
+	min-height: 40px;
+	border-radius: 3px; 
+}
+#paymentSuccess .modal-confirm .close {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}	
+#paymentSuccess .modal-confirm .modal-footer {
+	border: none;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 13px;
+}	
+#paymentSuccess .modal-confirm .icon-box {
+	color: #fff;		
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: -70px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #82ce34;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+#paymentSuccess .modal-confirm .icon-box i {
+	font-size: 58px;
+	position: relative;
+	top: 3px;
+}
+#paymentSuccess .modal-confirm.modal-dialog {
+	margin-top: 140px;
+}
+#paymentSuccess .modal-confirm .btn {
+	color: #fff;
+	border-radius: 4px;
+	background: #82ce34;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border: none;
+}
+#paymentSuccess .modal-confirm .btn:hover, .modal-confirm .btn:focus {
+	background: #6fb32b;
+	outline: none;
+}
+#paymentSuccess .trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+.card {
+    border: 1px solid #e4e7ed;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: .25rem;
+}
+.card__header {
+    padding: 27px 23px;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    border-bottom: 1px solid #e4e7ed;
+    overflow: hidden;
+    background-color: transparent;
+}
+.card__header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 6px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #38a9ff;
+    border-radius: 3px 0 0 0;
+}
+.rtlpage .card__header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 6px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #38a9ff;
+    border-radius: 3px 0 0 0;
+}
+.card__header > h4 {
+    font-size: 16px;
+    line-height: 1.2em;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-style: normal;
+}
+.rtlpage .card__header > h4 {
+    text-align: right;
+}
+.card__content {
+    padding: 24px 24px;
+}
+
+.card__header + .card__content .df-account-navigation {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.card .df-account-navigation {
+    margin-top: -24px;
+    margin-right: -24px;
+    margin-bottom: -24px;
+    margin-left: -24px;
+}
+.df-account-navigation {
+    border-radius: 4px;
+    overflow: hidden;
+}
+.df-account-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+.df-account-navigation__link--active a, .df-account-navigation .active {
+    border-left: 6px solid #38a9ff;
+    padding-left: 18px;
+    background-color: #fafafb;
+}
+.rtlpage .df-account-navigation__link--active a,.rtlpage .df-account-navigation .active{
+     border-right: 6px solid #38a9ff;
+     border-left: 0px;
+    padding-left: 0px;
+    background-color: #fafafb;
+}
+.rtlpage .df-account-navigation__link > a{
+    text-align: right;
+}
+.df-account-navigation__link  {
+    border-top: 1px solid #e4e7ed;
+}
+.df-account-navigation__link > a {
+    display: block;
+    padding: 24px 24px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #31404b;
+    line-height: 1.2em;
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+.df-personal-info label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 15px;
+    font-family: 'Cairo', sans-serif;
+    display: block;
+}
+.rtlpage .df-personal-info label{
+    text-align: right;
+}
+.df-personal-info .form-control {
+    font-family: 'Cairo', sans-serif;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .375rem .75rem;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 5px !important;
+}
+.df-personal-info .form-group {
+    margin: 15px 0 !important;
+}
+.danger-errors p{
+        margin-bottom: 0;
+    color: black;
+    font-size: 17px;
+}
+body.ar .danger-errors p{
+    text-align: right;
+}
+.custom_table_subscriptions *{
+     font-family: 'Cairo', sans-serif;
+}
+.custom_table_subscriptions .table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #e4e7ed;
+    font-weight: 700;
+    color: #31404b;
+    font-style: normal;
+    text-transform: uppercase;
+}
+ .table>thead>tr>th , .table>tbody>tr>td{
+    padding: 10px 10px !important;
+    font-size: 17px !important;
+}
+body.ar .table>thead>tr>th ,body.ar .table>tbody>tr>td{
+    text-align: right;
+}
+body.ar .acountstatus h4{
+    text-align: right;
+}
+body.ar .acountstatus a{
+    float: right;
+    margin-top: 20px;
+}
+.freezebtn{
+    padding: 6px 17px !important;
+    font-size: 15px !important;
+    letter-spacing: 0px !important;
+}
+.alert-success *{
+    color: white !important;
+}
+body.ar .noSubscriptionSectioninprofile h4 , body.ar .post_single_title{
+    text-align: right;
+}
+body.ar .noSubscriptionSectioninprofile *{
+       font-family: 'Cairo', sans-serif;
+}
+body.ar .noSubscriptionSectioninprofile a{
+    font-size: 17px;
+}
+body.ar .inner-sidebar h5 , body.ar .list-group-flush .list-group-item , body.ar .media-caption p{
+    text-align: right;
+}
+.post-text{
+    text-align: right;
+}
+body.ar .media-thumb{
+    float: right !important;
+    margin-left: 10px  !important;
+    margin-right: 0px  !important;
+}
+.media-thumb{
+    width: 75px;
+}
+body.ar .media-caption{
+    float: left;
+    width: 160px;
+}
+body.ar .tags-lists .btn{
+    float: right;
+}
+.fig-caption , .post-text{
+    font-family: 'Cairo', sans-serif;
+}
+.thereIsNoPostsRelatedToThisCat{
+    font-family: 'Cairo', sans-serif;
+}
+body.ar .thereIsNoPostsRelatedToThisCat{
+    text-align: right;
+}
+body.ar .footer-about p{
+    text-align: right;
+    direction: rtl;
+}
+.post-image-preview{
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+body.ar .fig-caption *{
+    text-align: right;
+    direction: rtl;
+}
+.fig-caption *{
+  height: auto !important;
+}
+.fig-caption p{
+    height: 70px;
+}
+.post-categorie-left .categorie{
+    font-size: 12px;
+    background: #f58120;
+    border-radius: 5px;
+    padding: 1px 7px;
+    color: white;
+}
+.teamOption{
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    font-size: 19px;
+
+}
+.duration_price_in_show{
+     font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    font-size: 15px;
+}
+.soloprices{
+    display: none;
+}
+.soloSwap{
+        font-family: 'Cairo', sans-serif;
+        cursor: pointer;
+        font-size: 15px;
+        padding: 0 13px;
+    margin-bottom: 15px;
+}
+.headoverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgb(0 0 0 / 35%);
+}
