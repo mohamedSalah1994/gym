@@ -68,8 +68,7 @@ class main extends Controller
 	    return $pdf->download($payment->userObj->name . '.pdf');
     }
     public function login(){
-        $password = Hash::make('123456789');
-        return view('admin.login' , compact('password'));
+        return view('admin.login');
     }
     public function deleteUser($id){
         $user = User::find($id);
@@ -119,7 +118,7 @@ class main extends Controller
               }
                $allSubscriptions = subscriptions::with('User')->orderBy('id','desc')->paginate($perpage, ['*'], 'page', $page);
                return response()->json(new subscriptionsResource($allSubscriptions),200);
-
+             
           }
         return view('admin.subscriptions');
     }
@@ -144,7 +143,7 @@ class main extends Controller
           $allposts = posts::all();
         return view('admin.posts',compact('allposts'));
     }
-
+    
       public function addPost(){
           $tags = tags::all();
           $categories = categories::all();
@@ -172,7 +171,7 @@ class main extends Controller
           'desc.required' => __('admin.desc_required'),
           'desc.string' => __('admin.desc_string'),
           'desc.max' => __('admin.desc_max'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'title' => 'required|string',
@@ -181,7 +180,7 @@ class main extends Controller
             'work_start_at' => 'required',
             'number_of_work_hours' => 'required|numeric',
             'desc' => 'required|string|max:350',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -205,7 +204,7 @@ class main extends Controller
             $setting_sitedesc = settings::where('key','sitedesc')->firstOrFail();
             $setting_sitedesc->value = $request->desc;
             $setting_sitedesc->save();
-
+            
             return back()->with('message',__('admin.successedSavedData'));
         }
     }
@@ -224,7 +223,7 @@ class main extends Controller
            'image.max' => __('admin.image_max'),
            'content.required' => __('admin.content_required'),
            'content.string' => __('admin.content_string'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'title' => 'required|string',
@@ -234,7 +233,7 @@ class main extends Controller
             'tags.*' => 'exists:tags,id',
             'image' => 'required|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
             'content' => 'required|string',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -242,10 +241,10 @@ class main extends Controller
         else{
             $slug = Str::slug($request->title);
             $count = posts::whereRaw("slug RLIKE '^{$slug}(-[0-9]+)?$'")->count();
-            $fileName = ($count ? "{$slug}-{$count}" : $slug) .'.'.$request->image->extension();
+            $fileName = ($count ? "{$slug}-{$count}" : $slug) .'.'.$request->image->extension();  
             $request->image->move(public_path('uploads'), $fileName);
-
-
+            
+            
             $newPost = new posts();
             $newPost->title = $request->title;
             $newPost->slug = $count ? "{$slug}-{$count}" : $slug;
@@ -275,11 +274,11 @@ class main extends Controller
             $messages = [
            'name.required' => __('admin.cat_name_required'),
            'name.string' => __('admin.cat_name_string'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -297,11 +296,11 @@ class main extends Controller
             $messages = [
            'name.required' => __('admin.cat_name_required'),
            'name.string' => __('admin.cat_name_string'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -332,13 +331,13 @@ class main extends Controller
            'email.unique' => __('admin.user_email_unique'),
            'identity.required' => __('admin.user_identity_required'),
            'identity.string' => __('admin.user_identity_numeric'),
-            'identity.unique' => __('admin.user_identity_unique'),
+            'identity.unique' => __('admin.user_identity_unique'),    
            'mobile.required' => __('admin.user_mobile_required'),
            'mobile.numeric' => __('admin.user_mobile_numeric'),
            'mobile.unique' => __('admin.user_mobile_unique'),
             'birth.required' => __('auth.birth_required'),
             'birth.date_format' => __('auth.birth_date_format'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
@@ -346,7 +345,7 @@ class main extends Controller
             'mobile' => 'required|numeric|unique:users,mobile,' . $id,
             'password' => 'nullable|string',
             'birth' => 'required|date_format:Y-m-d',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -380,7 +379,7 @@ class main extends Controller
            'password.min' => __('admin.user_password_min'),
                 'birth.required' => __('auth.birth_required'),
             'birth.date_format' => __('auth.birth_date_format'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
@@ -388,7 +387,7 @@ class main extends Controller
             'mobile' => 'required|numeric|unique:users,mobile',
             'password' => 'required|min:8',
              'birth' => 'required|date_format:Y-m-d',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -403,7 +402,7 @@ class main extends Controller
                 return back()->with('message',__('admin.userAddedSuccessfully'));
         }
     }
-
+    
     public function editsubscriptions($id){
         $subscription = subscriptions::findOrFail($id);
          $allplans = plans::where('status','1')->get();
@@ -418,12 +417,12 @@ class main extends Controller
                       'plan.required' => __('admin.plan_required') ,
                       'plan.exists' => __('admin.plan_exists') ,
                       'payment.required' => __('admin.payment_required') ,
-
+            
         ];
         $validator = Validator::make($request->all(),[
              'plan' => 'required|exists:plans,id',
              'payment' => 'required|in:1,2'
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -462,7 +461,7 @@ class main extends Controller
                       'plan.required' => __('admin.plan_required') ,
                       'plan.exists' => __('admin.plan_exists') ,
                       'payment.required' => __('admin.payment_required') ,
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'user' => ['required','exists:users,id',function ($attribute, $value, $fail) {
@@ -473,7 +472,7 @@ class main extends Controller
         }],
             'plan' => 'required|exists:plans,id',
             'payment' => 'required|in:1,2'
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -488,7 +487,7 @@ class main extends Controller
             $new_subscription->start_from = Carbon::now();
             $new_subscription->end_to = Carbon::now()->addDays($plan->days);
             $new_subscription->save();
-
+            
                         $newPaymentInitial = new payments();
                         $newPaymentInitial->user = $user->id;
                         $newPaymentInitial->plan = $plan->id;
@@ -500,7 +499,7 @@ class main extends Controller
                         $newPaymentInitial->save();
                return back()->with('message',__('admin.subscriptionAddedSuccessfully'));
         }
-
+     
     }
     public function plans(){
         $plans = plans::where('status',1)->get();
@@ -511,21 +510,21 @@ class main extends Controller
     }
     public function insertPlan(Request $request){
                      $messages = [
-
-            'name.required' => __('admin.plan_name_required') ,
-            'name.string' => __('admin.plan_name_string') ,
-            'days.required' => __('admin.plan_days_required') ,
-            'days.numeric' => __('admin.plan_days_numeric') ,
-            'days.min' => __('admin.plan_days_min') ,
-            'price.required' => __('admin.plan_price_required') ,
-            'price.numeric' => __('admin.plan_price_numeric') ,
-            'price.min' => __('admin.plan_price_min') ,
+               
+            'name.required' => __('admin.plan_name_required') , 
+            'name.string' => __('admin.plan_name_string') , 
+            'days.required' => __('admin.plan_days_required') , 
+            'days.numeric' => __('admin.plan_days_numeric') , 
+            'days.min' => __('admin.plan_days_min') , 
+            'price.required' => __('admin.plan_price_required') , 
+            'price.numeric' => __('admin.plan_price_numeric') , 
+            'price.min' => __('admin.plan_price_min') , 
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
             'days' => 'required|numeric|min:1',
             'price' => 'required|numeric|min:1',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -547,21 +546,21 @@ class main extends Controller
          $plan = plans::findOrFail($id);
         if(!$plan){ return abort(404);}
                  $messages = [
-
-            'name.required' => __('admin.plan_name_required') ,
-            'name.string' => __('admin.plan_name_string') ,
-            'days.required' => __('admin.plan_days_required') ,
-            'days.numeric' => __('admin.plan_days_numeric') ,
-            'days.min' => __('admin.plan_days_min') ,
-            'price.required' => __('admin.plan_price_required') ,
-            'price.numeric' => __('admin.plan_price_numeric') ,
-            'price.min' => __('admin.plan_price_min') ,
+               
+            'name.required' => __('admin.plan_name_required') , 
+            'name.string' => __('admin.plan_name_string') , 
+            'days.required' => __('admin.plan_days_required') , 
+            'days.numeric' => __('admin.plan_days_numeric') , 
+            'days.min' => __('admin.plan_days_min') , 
+            'price.required' => __('admin.plan_price_required') , 
+            'price.numeric' => __('admin.plan_price_numeric') , 
+            'price.min' => __('admin.plan_price_min') , 
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
             'days' => 'required|numeric|min:1',
             'price' => 'required|numeric|min:1',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -604,14 +603,14 @@ class main extends Controller
               }
                $bookings = booking::with('User')->orderBy('day','desc')->paginate($perpage, ['*'], 'page', $page);
                return response()->json(new bookingsResource($bookings),200);
-
+             
           }
         return view('admin.bookings');
     }
      public function contactInfo(){
         return view('admin.contactInfo');
     }
-
+    
     public function bookingsConfirm($id){
         $booking = booking::findOrFail($id);
          if(!$booking){ return abort(404);}
@@ -621,19 +620,19 @@ class main extends Controller
     }
     public function contactInfoUpdate(Request $request){
                  $messages = [
-               'email.required' => __('admin.contact_email_required') ,
-               'email.email' => __('admin.contact_email_email') ,
-               'address.required' => __('admin.contact_address_required') ,
-               'address.string' => __('admin.contact_address_string') ,
-               'mobile.required' => __('admin.contact_mobile_required') ,
-               'mobile.string' => __('admin.contact_mobile_string') ,
-
+               'email.required' => __('admin.contact_email_required') , 
+               'email.email' => __('admin.contact_email_email') , 
+               'address.required' => __('admin.contact_address_required') , 
+               'address.string' => __('admin.contact_address_string') , 
+               'mobile.required' => __('admin.contact_mobile_required') , 
+               'mobile.string' => __('admin.contact_mobile_string') , 
+      
         ];
         $validator = Validator::make($request->all(),[
             'email' => 'required|email',
             'address' => 'required|string',
             'mobile' => 'required|string',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -650,7 +649,7 @@ class main extends Controller
             return back()->with('message',__('admin.successedSavedData'));
         }
     }
-    public function export()
+    public function export() 
         {
             return Excel::download(new UsersExport(), 'invoices.xlsx');
     }
@@ -681,7 +680,7 @@ class main extends Controller
            'image.max' => __('admin.image_max'),
            'content.required' => __('admin.content_required'),
            'content.string' => __('admin.content_string'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'title' => 'required|string',
@@ -691,7 +690,7 @@ class main extends Controller
             'tags.*' => 'exists:tags,id',
             'image' => 'nullable|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
             'content' => 'required|string',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -699,13 +698,13 @@ class main extends Controller
         else{
             if($request->image){
                     $slug = Str::slug($request->title);
-                    $fileName = $slug .'.'.$request->image->extension();
+                    $fileName = $slug .'.'.$request->image->extension();  
                     $request->image->move(public_path('uploads'), $fileName);
             }
-
-
-
-
+            
+            
+            
+   
             $post->title = $request->title;
             if($request->image){
                  $post->image = $fileName;
@@ -713,7 +712,7 @@ class main extends Controller
             $post->content = $request->content;
             $post->save();
             if(isset($request->cats) && count($request->cats) > 0){
-
+                
                 foreach($post->post_cats as $cat){
                     $cat->delete();
                 }
@@ -765,7 +764,7 @@ class main extends Controller
            'image.mimes' => __('admin.trainer_image_mimes'),
            'image.max' => __('admin.trainer_image_max'),
 
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
@@ -776,12 +775,12 @@ class main extends Controller
             'insta' => 'nullable|string',
             'image' => 'required|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
 
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
-         $fileName = time() . '-' . Str::slug($request->name) .'.'.$request->image->extension();
+         $fileName = time() . '-' . Str::slug($request->name) .'.'.$request->image->extension();  
          $request->image->move(public_path('uploads/trainers'), $fileName);
          $new_trainer = new trainers();
          $new_trainer->name = $request->name;
@@ -821,7 +820,7 @@ class main extends Controller
            'image.mimes' => __('admin.trainer_image_mimes'),
            'image.max' => __('admin.trainer_image_max'),
 
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
@@ -832,14 +831,14 @@ class main extends Controller
             'insta' => 'nullable|string',
             'image' => 'nullable|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
 
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
-
+     
          if($request->image){
-                 $fileName = time() . '-' . Str::slug($request->name) .'.'.$request->image->extension();
+                 $fileName = time() . '-' . Str::slug($request->name) .'.'.$request->image->extension();  
                  $request->image->move(public_path('uploads/trainers'), $fileName);
          }
          $trainer->name = $request->name;
@@ -871,20 +870,20 @@ class main extends Controller
            'image.mimes' => __('admin.comment_image_mimes'),
            'image.max' => __('admin.comment_image_max'),
 
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
             'comment' => 'required|string',
             'image' => 'nullable|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
 
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
            if($request->image){
-                 $fileName = time() . '-' . Str::slug($request->name) .'.'.$request->image->extension();
+                 $fileName = time() . '-' . Str::slug($request->name) .'.'.$request->image->extension();  
                  $request->image->move(public_path('uploads/comments'), $fileName);
          }
           $newcustomersComment = new customersComments();
@@ -913,20 +912,20 @@ class main extends Controller
            'image.mimes' => __('admin.comment_image_mimes'),
            'image.max' => __('admin.comment_image_max'),
 
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
             'comment' => 'required|string',
             'image' => 'nullable|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
 
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
            if($request->image){
-                 $fileName = time() . '-' . Str::slug($request->name) .'.'.$request->image->extension();
+                 $fileName = time() . '-' . Str::slug($request->name) .'.'.$request->image->extension();  
                  $request->image->move(public_path('uploads/comments'), $fileName);
          }
           $opinion->cName = $request->name;
@@ -955,19 +954,19 @@ class main extends Controller
            'image.max' => __('admin.slider_image_max'),
            'image.required' => __('admin.slider_image_required'),
 
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'title' => 'required|string',
             'subtitle' => 'required|string',
             'image' => 'required|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
 
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
-         $fileName = time() . '-' . Str::slug($request->title) .'.'.$request->image->extension();
+         $fileName = time() . '-' . Str::slug($request->title) .'.'.$request->image->extension();  
          $request->image->move(public_path('uploads/slider'), $fileName);
         $newslider = new slider();
         $newslider->title = $request->title;
@@ -994,20 +993,20 @@ class main extends Controller
            'image.max' => __('admin.slider_image_max'),
            'image.required' => __('admin.slider_image_required'),
 
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'title' => 'required|string',
             'subtitle' => 'required|string',
             'image' => 'nullable|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
 
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
           if($request->image){
-              $fileName = time() . '-' . Str::slug($request->title) .'.'.$request->image->extension();
+              $fileName = time() . '-' . Str::slug($request->title) .'.'.$request->image->extension();  
               $request->image->move(public_path('uploads/slider'), $fileName);
           }
         $slider->title = $request->title;
@@ -1018,7 +1017,7 @@ class main extends Controller
         $slider->save();
         return back()->with('message',__('admin.successedsliderEdited'));
     }
-
+    
     public function gallery(){
         $gallery_categories = gallery_categories::all();
         return view('admin.gallery',compact('gallery_categories'));
@@ -1078,7 +1077,7 @@ class main extends Controller
            'image.file' => __('admin.'),
            'image.mimes' => __('admin.'),
            'image.max' => __('admin.'),
-           'image.required' => __('admin.'),
+           'image.required' => __('admin.'),  
         ];
         $validator = Validator::make($request->all(),[
             'image' => 'nullable|file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
@@ -1088,9 +1087,9 @@ class main extends Controller
         }
         $allcounted = gallery::all()->count();
         $allcounted += 1;
-        $fileName = time() . '-' . $allcounted .'.'.$request->image->extension();
+        $fileName = time() . '-' . $allcounted .'.'.$request->image->extension();  
         $request->image->move(public_path('uploads/gallery'), $fileName);
-
+        
         $newgallery = new gallery();
         $newgallery->category = $id;
         $newgallery->image = $fileName;
@@ -1104,8 +1103,8 @@ class main extends Controller
           $gallery->delete();
           return response()->json(['status' => 'success'],200);
     }
-
-
+    
+      
     public function roles(){
         $roles = roles::where('id','!=',1)->get();
         return view('admin.roles',compact('roles'));
@@ -1116,16 +1115,16 @@ class main extends Controller
     }
     public function insertroles(Request $request){
         $messages = [
-           'name.required' => __('admin.roles_name_required'),
-           'name.string' => __('admin.roles_name_string'),
-           'roles.required' => __('admin.roles_roles_required'),
-           'roles.*' => __('admin.roles_roles_exists'),
+           'name.required' => __('admin.roles_name_required'),  
+           'name.string' => __('admin.roles_name_string'),  
+           'roles.required' => __('admin.roles_roles_required'),  
+           'roles.*' => __('admin.roles_roles_exists'),  
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
             'roles' => 'required',
             'roles.*' => 'exists:permissions,id',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -1145,16 +1144,16 @@ class main extends Controller
         $role = roles::findOrFail($id);
         if(!$role){ return abort(404);}
         $messages = [
-           'name.required' => __('admin.roles_name_required'),
-           'name.string' => __('admin.roles_name_string'),
-           'roles.required' => __('admin.roles_roles_required'),
-           'roles.*' => __('admin.roles_roles_exists'),
+           'name.required' => __('admin.roles_name_required'),  
+           'name.string' => __('admin.roles_name_string'),  
+           'roles.required' => __('admin.roles_roles_required'),  
+           'roles.*' => __('admin.roles_roles_exists'),  
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
             'roles' => 'required',
             'roles.*' => 'exists:permissions,id',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -1173,7 +1172,7 @@ class main extends Controller
         }
          return back()->with('message',__('admin.successedRoleEddited'));
     }
-
+    
      public function moderators(){
         $moderators = Admin::all();
         return view('admin.moderators',compact('moderators'));
@@ -1199,7 +1198,7 @@ class main extends Controller
            'password.min' => __('admin.user_password_min'),
            'role.required' => __('admin.user_role_required'),
            'role.exists' => __('admin.user_role_exists'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
@@ -1208,7 +1207,7 @@ class main extends Controller
             'mobile' => 'required|numeric|unique:admins,mobile',
             'password' => 'required|min:8',
             'role' => 'required|exists:roles,id',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -1253,7 +1252,7 @@ class main extends Controller
            'mobile.unique' => __('admin.user_mobile_unique'),
             'role.required' => __('admin.user_role_required'),
            'role.exists' => __('admin.user_role_exists'),
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'name' => 'required|string',
@@ -1262,7 +1261,7 @@ class main extends Controller
             'mobile' => 'required|numeric|unique:admins,mobile,' . $id,
             'password' => 'nullable|string',
             'role' => 'required|exists:roles,id',
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -1282,7 +1281,7 @@ class main extends Controller
         }
     }
      public function editroles($id){
-
+         
          $role = roles::where('id',$id)->where('id','!=',1)->first();
         if(!$role){
             return abort(404);
@@ -1302,12 +1301,12 @@ class main extends Controller
         auth()->guard('admin')->logout();
         return redirect(route('admin.login.show'));
     }
-
+    
     public function homesectiontwo(){
         return view('admin.HomeSectionTwo');
     }
     public function inserthomesectiontwo(Request $request){
-
+     
         $messages = [
            'title.required' => __('admin.second_section_title_required'),
            'title.string' => __('admin.second_section_title_string'),
@@ -1325,8 +1324,8 @@ class main extends Controller
            'thirdImage.file' => __('admin.second_section_thirdImage_file'),
            'thirdImage.mimes' => __('admin.second_section_thirdImage_mimes'),
            'thirdImage.max' => __('admin.second_section_thirdImage_max'),
-
-
+ 
+            
         ];
         $rules = [
             'title' => 'required|string',
@@ -1334,7 +1333,7 @@ class main extends Controller
             'first' => 'file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
             'second' => 'file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
             'third' => 'file|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
-
+            
         ];
         $count = home_second::all()->count();
         if($count == 0){
@@ -1351,19 +1350,19 @@ class main extends Controller
             return back()->withErrors($validator);
         }
         if($request->first){
-             $fileNameFirst = time() . '-' . Str::slug($request->title) .'-1'.'.'.$request->first->extension();
+             $fileNameFirst = time() . '-' . Str::slug($request->title) .'-1'.'.'.$request->first->extension();  
              $request->first->move(public_path('uploads/home_second_section'), $fileNameFirst);
         }
         if($request->second){
-            $fileNameSecond = time() . '-' . Str::slug($request->title) .'-2'.'.'.$request->second->extension();
+            $fileNameSecond = time() . '-' . Str::slug($request->title) .'-2'.'.'.$request->second->extension();  
             $request->second->move(public_path('uploads/home_second_section'), $fileNameSecond);
         }
         if($request->third){
-                $fileNameThird = time() . '-' . Str::slug($request->title) .'-3'.'.'.$request->third->extension();
+                $fileNameThird = time() . '-' . Str::slug($request->title) .'-3'.'.'.$request->third->extension();  
                 $request->third->move(public_path('uploads/home_second_section'), $fileNameThird);
         }
-
-
+        
+          
         if($count == 0){
             $newhome_second = new home_second();
             $newhome_second->title = $request->title;
@@ -1389,8 +1388,8 @@ class main extends Controller
             $home_second->save();
             return back()->with('message',__('admin.home_second_sectionEdit'));
         }
-
-
+         
+   
     }
     public function services(){
         $services = services::all();
@@ -1414,13 +1413,13 @@ class main extends Controller
            'subtitle.required' => __('admin.service_subtitle_required'),
            'subtitle.string' => __('admin.service_subtitle_string'),
 
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'title' => 'required|string',
             'subtitle' => 'required|string',
 
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -1442,13 +1441,13 @@ class main extends Controller
            'subtitle.required' => __('admin.service_subtitle_required'),
            'subtitle.string' => __('admin.service_subtitle_string'),
 
-
+            
         ];
         $validator = Validator::make($request->all(),[
             'title' => 'required|string',
             'subtitle' => 'required|string',
 
-
+            
         ],$messages);
         if($validator->fails()){
             return back()->withErrors($validator);
@@ -1458,7 +1457,7 @@ class main extends Controller
          $service->save();
          return back()->with('message',__('admin.service_editSuccessfully'));
      }
-
+    
     public function payments(Request $request){
           if($request->ajax()){
               if($request->datatable['pagination']['page'] != null){
@@ -1480,34 +1479,34 @@ class main extends Controller
                              ->orWhere('email',$search);
                     })->orWhereHas('adminOb' , function ($query) use ($search) {
                        $query->where('name',$search);
-
+                           
                     })->orderBy('id','desc')->paginate($perpage, ['*'], 'page', $page);
                   return response()->json(new subscriptionsResource($payments),200);
               }
                $payments = payments::with('userObj','planOb','adminOb')->where('status','PAID')->orderBy('id','desc')->paginate($perpage, ['*'], 'page', $page);
                return response()->json(new paymentsResource($payments),200);
-
+             
           }
         return view('admin.payments');
     }
-     public function exportPayments(Request $request){
+     public function exportPayments(Request $request){ 
          session()->put('start',$request->start);
          session()->put('end',$request->end);
-
+         
           return response()->json(['status' => 'done'],200);
      }
-       public function exportPaymentsDownload(){
+       public function exportPaymentsDownload(){ 
         return Excel::download(new PaymentsExport(), 'Payments-'.Carbon::now().'-.xlsx');
      }
-
-
-
-
-
-
-
-
-
-
-
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

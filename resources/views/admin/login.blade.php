@@ -20,7 +20,7 @@
             }
           });
 		</script>
-         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">  
 		<!--end::Web font -->
         <!--begin::Base Styles -->
 		<link href="{{asset('admin_assets/assets/vendors/base/vendors.bundle.css')}}" rel="stylesheet" type="text/css" />
@@ -52,7 +52,6 @@
 									</div>
 									<form class="m-login__form m-form"  method="post">
                                         {{csrf_field()}}
-
 										<div class="form-group m-form__group">
 											<input class="form-control m-input" type="email" placeholder="{{__('admin.email')}}" name="email" autocomplete="off">
 										</div>
@@ -177,7 +176,7 @@
 						<h3 class="m-login__welcome" style="font-family: 'Cairo', sans-serif ;">
 							{{__('admin.welcome')}}
 						</h3>
-
+						
 					</div>
 				</div>
 			</div>
@@ -186,7 +185,7 @@
     	<!--begin::Base Scripts -->
 		<script src="{{asset('admin_assets/assets/vendors/base/vendors.bundle.js')}}" type="text/javascript"></script>
 		<script src="{{asset('admin_assets/assets/demo/default/base/scripts.bundle.js')}}" type="text/javascript"></script>
-		<!--end::Base Scripts -->
+		<!--end::Base Scripts -->   
         <!--begin::Page Snippets -->
 		<script>
         //== Class Definition
@@ -290,7 +289,7 @@ var SnippetLogin = function() {
                         showErrorMsg(form, 'danger', response.message);
                     }
                      btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false);
-
+                	
                 }
             });
         });
@@ -376,10 +375,10 @@ var SnippetLogin = function() {
 
             form.ajaxSubmit({
                 url: '',
-                success: function(response, status, xhr, $form) {
+                success: function(response, status, xhr, $form) { 
                 	// similate 2s delay
                 	setTimeout(function() {
-                		btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false); // remove
+                		btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false); // remove 
 	                    form.clearForm(); // clear form
 	                    form.validate().resetForm(); // reset validation states
 

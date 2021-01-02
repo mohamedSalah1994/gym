@@ -3,7 +3,7 @@
 <div class="loader"></div>
 </div>
 <!-- LOADER -->
-
+    
     <header class="section-header">
         <div class="top-header">
             <div class="container">
@@ -18,7 +18,7 @@
                     <div class="address-top"><p>{{$address->value ?? ''}}</p></div>
                 </div>
             </div>
-        </div>
+        </div> 
 <nav>
             <div class="container">
                 <hr class="top">
@@ -28,17 +28,19 @@
                   <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbar1">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto"> 
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/')}}">{{__('main.HOME')}}</a>
                         </li>
-
+                       
                            <li class="nav-item">
                             <a class="nav-link" href="{{route('getPosts')}}">{{__('main.Blogs')}}</a>
                         </li>
-
-
-
+                        
+                       
+                           <li class="nav-item">
+                            <a class="nav-link" href="{{route('contact.view')}}">{{__('main.CONTACT US')}}</a>
+                        </li>
                         </li>
                            <li class="nav-item">
                             <a class="nav-link" href="{{route('packages')}}">{{__('main.packagesPageHead')}}</a>
@@ -57,9 +59,9 @@
                             <li class="nav-item">
                             <a class="nav-link"  href="#loginModal" data-toggle="modal">{{__('main.SIGN')}}</a>
                         </li>
-
+                        
                         @endif
-
+                        
                     </ul>
                   </div>
                 </nav>

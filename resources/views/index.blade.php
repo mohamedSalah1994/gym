@@ -47,19 +47,19 @@
             <div class="row hover-effects image-hover">
               <div class="col-lg-4 image-box">
                 <figure><img src="{{asset('uploads/home_second_section/'.$home_second->firstImage)}}" alt=""/></figure>
-
+               
               </div>
               <div class="col-lg-4 image-box">
                 <figure><img src="{{asset('uploads/home_second_section/'.$home_second->secondImage)}}" alt=""/></figure>
-
+              
               </div>
               <div class="col-lg-4 image-box">
                 <figure><img src="{{asset('uploads/home_second_section/'.$home_second->thiedImage)}}" alt=""/></figure>
-
+             
               </div>
             </div>
         </div>
-
+        
         <div class="container-fluid inner-color" style="margin:0px;">
             <div class="container">
                 <div class="row">
@@ -74,23 +74,23 @@
                         @foreach($services as $service)
                         <div class="icon-lists">
                             <div class="icon-text">
-                                <h3>{{$service->title}}</h3>
+                                <h3>{{$service->title}}</h3> 
                                 <p>{{$service->description}}</p>
                             </div>
                         </div>
                         @endforeach
-                    </div>
+                    </div> 
                   </div>
                   <div class="col-lg-4">
-                    <figure class="center-pic"><img src="{{asset('images/1.png')}}" alt=""></figure>
+                    <figure class="center-pic"><img src="{{asset('images/1.png')}}" alt=""></figure> 
                   </div>
                   <div class="col-lg-4">
                     <div class="aside-right">
                          @foreach($lastservices as $service)
                         <div class="icon-lists">
-
+                    
                             <div class="icon-text">
-                                <h3>{{$service->title}}</h3>
+                                <h3>{{$service->title}}</h3> 
                                 <p>{{$service->description}}</p>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                 <hr class="center">
                 <p></p>
             </div>
-
+            
                 <div class="trainers-carousel">
                     <div class="row">
                         @php
@@ -145,11 +145,11 @@
                     </div>
             </div>
         </div> --}}
-
+        
         <div class="container-fluid parallax" style="background-image:url({{asset('images/3.jpg')}});margin-top: 0;">
-
+          
         </div>
-
+        
         <div class="container filterable-portfolio">
             <div class="section-title">
                 <h2>{{__('main.GALLERY')}}</h2>
@@ -178,7 +178,7 @@
                   @endforeach
           </div>
         </div>
-
+        
         <div class="container">
             <div class="section-title">
                 <h2>{{__('main.Customer Opinions')}}</h2>
@@ -200,11 +200,11 @@
              @endforeach
             </div>
         </div>
-
+        
         <div class="container-fluid promotion-parallax" style="background-image:url({{asset('images/4.jpg')}});">
-
+          
         </div>
-
+        
         <div class="container">
             <div class="section-title">
                 <h2>{{__('main.Latest News')}}</h2>
@@ -229,15 +229,15 @@
                               @foreach($post->post_cats as $post_cat)
                             <span class="categorie">{{$post_cat->cat_obj->name}}</span>
                                                 @endforeach
-
-                        </div>
+                           
+                        </div> 
                     </div>
                   </div>
-                </div>
+                </div>  
               </div>
             @endforeach
             </div>
         </div>
-
+    
     </section>
   @include('footer')
